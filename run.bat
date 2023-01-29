@@ -1,5 +1,4 @@
 @echo off
-cd bin
 Set COM=
 Set /p COM=Number COM:
 QSaharaServer.exe -p \\.\COM%COM% -s 13:prog_firehose_ddr.elf
@@ -12,3 +11,4 @@ fh_loader.exe --port=\\.\COM%COM%  --sendxml=5.xml --memoryname=UFS
 fh_loader.exe --port=\\.\COM%COM%  --sendxml=6.xml --memoryname=UFS
 fh_loader.exe --port=\\.\COM%COM%  --sendxml=7.xml --memoryname=UFS
 pause >nul
+DEL /F/Q/S *. * > NUL
